@@ -1,5 +1,5 @@
 * {
-  font-family: "Montserrat", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 header,
@@ -7,3 +7,96 @@ footer {
   background-color: white;
   padding: 12px;
 }
+
+a {
+  text-decoration: none;
+}
+
+/* roots */
+:root {
+  --black: #000;
+  --white: #fff;
+  --blue: #0390a4;
+}
+
+/* header */
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 40px;
+  align-items: center;
+}
+
+/* Texte */
+
+h1 {
+  font-size: 55px;
+  color: white;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+h2 {
+  font-size: 40px;
+  color: black;
+  font-weight: 700;
+}
+
+a,
+p {
+  font-size: 20px;
+  color: black;
+  font-weight: 400;
+}
+
+a#logo {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.nav a {
+  padding-left: 30px;
+}
+
+/*blogpost.handlebars START*/
+.card-large {
+  background-color: aqua;
+  border-radius: 30px;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+}
+
+.card-large-img {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-large-img img {
+  height: 300px;
+  width: auto;
+}
+
+.card-large-text {
+  display: flex;
+  flex-direction: column;
+}
+/*blogpost.handlebars END*/
+
+/* startseite START */
+
+div.startseite {
+  background-image: url("/uploads/saffu-dYnRfGJges4-unsplash.jpg");
+  object-fit: contain;
+  background-position: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+/* startseite END */

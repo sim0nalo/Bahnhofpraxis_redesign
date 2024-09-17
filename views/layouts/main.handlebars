@@ -3,15 +3,22 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      @import
+      url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
     <title>HTML5 Boilerplate</title>
     <link rel="stylesheet" href="/style.css" />
   </head>
 
   <body>
     <header>
-      <a href="/">Home</a>
-      <a href="/profil">Profil</a>
-      <a href="/logout">Logout</a>
+      <a id="logo" href="/">Share your journey</a>
+      <div class="nav">
+        <a href="/">Home</a>
+        <a href="/profil">Profil</a>
+        <a href="/logout">Logout</a>
+      </div>
     </header>
 
     {{{body}}}
