@@ -92,11 +92,17 @@ div.startseite {
   background-image: url("/uploads/saffu-dYnRfGJges4-unsplash.jpg");
   object-fit: contain;
   background-position: center;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
   display: flex;
+  flex-direction: column;
   height: 100%;
   width: 100%;
+}
+
+#down-arrow {
+  padding-top: 140px;
+  padding-bottom: 160px;
 }
 
 /* startseite END */
