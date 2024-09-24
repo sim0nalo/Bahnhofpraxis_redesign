@@ -100,10 +100,10 @@ button {
 }
 /*blogpost.handlebars END*/
 
-/* startseite START */
+/* Hintergrundbilder */
 
-div.startseite {
-  background-image: url("/uploads/homeseite.jpg");
+div.startseite,
+div.user_infos {
   object-fit: contain;
   background-position: center;
   justify-content: end;
@@ -113,6 +113,16 @@ div.startseite {
   height: 100%;
   width: 100%;
 }
+
+div.startseite {
+  background-image: url("/uploads/homeseite.jpg");
+}
+
+div.user_infos {
+  background-image: url("/uploads/denys-nevozhai-guNIjIuUcgY-unsplash (1).jpg");
+}
+
+/* startseite START */
 
 #down-arrow {
   padding-top: 140px;
@@ -192,3 +202,5 @@ img.icon {
 }
 
 /* detailseite END */
+
+/* profilsiete */

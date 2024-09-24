@@ -1,11 +1,11 @@
 import { createApp } from "./config.js";
 
 const app = createApp({
-  user: "autumn_star_7622",
-  host: "168.119.168.41",
-  database: "demo",
-  password: "uaioysdfjoysfdf",
-  port: 18324,
+  user: "old_glade_3344",
+  host: "bbz-cfp",
+  database: "old_glade_3344",
+  password: "a784a922a856aa6be8136ff839553591",
+  port: 30211,
 });
 
 /* Startseite */
@@ -19,6 +19,10 @@ app.get("/impressum", async function (req, res) {
 
 app.get("/profil", async function (req, res) {
   res.render("profil", {});
+});
+
+app.get("/detail", async function (req, res) {
+  res.render("detail", {});
 });
 
 app.get("/logout", async function (req, res) {
