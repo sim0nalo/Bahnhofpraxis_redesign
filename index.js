@@ -2,7 +2,7 @@ import { createApp } from "./config.js";
 
 const app = createApp({
   user: "old_glade_3344",
-  host: "bbz-cfp",
+  host: "bbz.cloud",
   database: "old_glade_3344",
   password: "a784a922a856aa6be8136ff839553591",
   port: 30211,
@@ -10,11 +10,13 @@ const app = createApp({
 
 /* Startseite */
 app.get("/", async function (req, res) {
-  res.render("start", {});
+  const posts = await app.locals.pool.query("select * from posts");
+  res.render("start", { posts: posts.rows });
 });
 
 app.get("/impressum", async function (req, res) {
-  res.render("impressum", {});
+  const posts = await app.locals.pool.query("select * from posts");
+  res.render("impressum", { posts: posts.rows });
 });
 
 app.get("/profil", async function (req, res) {

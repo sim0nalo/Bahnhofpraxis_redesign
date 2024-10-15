@@ -74,27 +74,45 @@ button {
 }
 
 /*blogpost.handlebars START*/
-.card-large {
+.cards {
   background-color: aqua;
-  border-radius: 30px;
   width: auto;
   height: auto;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-}
-
-.card-large-img {
   display: flex;
   flex-direction: column;
 }
 
-.card-large-img img {
-  height: 300px;
-  width: auto;
+.twocards {
+  display: flex;
+  flex-direction: row;
 }
 
-.card-large-text {
+.card-one {
+  margin: 50px;
+  padding: 15px;
+  background-color: blue;
+  border-radius: 30px;
+}
+
+.card-two {
+  margin: 50px;
+  padding: 15px;
+  background-color: red;
+  border-radius: 30px;
+}
+
+.cards-img {
+  display: flex;
+  flex-direction: column;
+}
+
+.cards-img img {
+  height: 300px;
+  width: auto;
+  border-radius: 30px 30px 0px 0px;
+}
+
+.cards-text {
   display: flex;
   flex-direction: column;
 }
