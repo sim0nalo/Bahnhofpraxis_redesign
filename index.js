@@ -11,6 +11,9 @@ const app = createApp({
 /* Startseite */
 app.get("/", async function (req, res) {
   const posts = await app.locals.pool.query("select * from posts");
+  for (const post of posts.rows) {
+    post.text = post.text.substring(0, 100) + "...";
+  }
   res.render("start", { posts: posts.rows });
 });
 
@@ -23,8 +26,11 @@ app.get("/profil", async function (req, res) {
   res.render("profil", {});
 });
 
-app.get("/detail", async function (req, res) {
-  res.render("detail", {});
+app.get("/detail/:id", async function (req, res) {
+  const posts = await app.locals.pool.query(
+    `select * from posts WHERE id = ${req.params.id}`
+  );
+  res.render("detail", { posts: posts.rows });
 });
 
 app.get("/logout", async function (req, res) {

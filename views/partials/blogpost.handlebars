@@ -1,31 +1,30 @@
-{{#posts}}
-  <div class="cards">
-    <div class="twocards">
-    <div class="card-one">
-    <div class="cards-img"><img
-        src="/uploads/dion-tavenier-h-Qb-9H6Big-unsplash.jpg"
-        alt="#"
-      /></div>
-    <div class="cards-text">
-      <p>{{created_at}}</p>
-      <h2>{{title}}</h2>
-      <p>{{text}}</p>
-      <button><a href="/detail">learn more</a></button>
-    </div>
-  </div>
+<div class="cards">
+  {{#posts}}
+    <div class="card">
+      <div class="card-img"><img
+          src="/uploads/dion-tavenier-h-Qb-9H6Big-unsplash.jpg"
+          alt="#"
+        /></div>
+      <div class="card-text">
+        <p>{{created_at}}</p>
+        <h2>{{title}}</h2>
+        <p>{{text}}</p>
+        <button><a href="/detail/{{id}}">learn more</a></button>
+        <div class="card-icons">
 
-  <div class="card-two">
-    <div class="cards-img"><img
-        src="/uploads/dion-tavenier-h-Qb-9H6Big-unsplash.jpg"
-        alt="#"
-      /></div>
-    <div class="cards-text">
-      <p>{{created_at}}</p>
-      <h2>{{title}}</h2>
-      <p>{{text}}</p>
-      <button><a href="/detail">learn more</a></button>
+          <a href="like"><img
+              class="icon"
+              src="/uploads/like.png"
+              S
+              alt=""
+            /></a>
+          <a href="kommentar"><img
+              class="icon"
+              src="/uploads/chat.png"
+              alt=""
+            /></a>
+        </div>
+      </div>
     </div>
-  </div>
-  </div>
-  </div>
-{{/posts}}
+  {{/posts}}
+</div>
