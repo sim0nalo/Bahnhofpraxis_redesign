@@ -39,6 +39,13 @@ h2 {
   font-weight: 700;
 }
 
+h3 {
+  font-size: 15px;
+  color: black;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
 a,
 p {
   font-size: 20px;
@@ -71,6 +78,18 @@ button {
   border: 1px solid black;
   background-color: white;
   align-self: flex-start;
+}
+
+.new_post_button {
+  position: fixed;
+  bottom: 70px;
+  right: 70px;
+  border: none;
+  width: 70px;
+  height: 70px;
+  padding: 0px;
+  border-radius: 100%;
+  box-shadow: 7px 4px 11px 0px rgba(0, 0, 0, 0.25);
 }
 
 /*blogpost.handlebars START*/
@@ -124,7 +143,9 @@ button {
 /* Hintergrundbilder */
 
 div.startseite,
-div.user-site {
+div.user-site,
+div.new_post-site,
+div.login-site {
   object-fit: contain;
   background-position: center;
   justify-content: end;
@@ -135,13 +156,40 @@ div.user-site {
   width: 100%;
 }
 
-div.startseite {
+div.startseite,
+div.new_post-site {
   background-image: url("/uploads/homeseite.jpg");
 }
 
 div.user-site {
   background-image: url("/uploads/denys-nevozhai-guNIjIuUcgY-unsplash (1).jpg");
 }
+
+div.login-site {
+  background-image: url("/uploads/denys-nevozhai-guNIjIuUcgY-unsplash (1).jpg");
+}
+
+/* login START*/
+
+h1 {
+  align-items: center;
+}
+
+.formular_login {
+  display: flex;
+  padding: 11px 23px;
+  border-radius: 33px;
+  border: 2px solid white;
+  align-self: flex-start;
+  background-color: transparent;
+  color: white;
+}
+
+.formular_login::placeholder {
+  color: white;
+}
+
+/* login END */
 
 /* startseite START */
 
@@ -151,6 +199,52 @@ div.user-site {
 }
 
 /* startseite END */
+
+/*Formular Post erstellen START*/
+.Form_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  height: 600px;
+  width: 900px;
+  border-radius: 30px;
+  box-shadow: 7px 4px 11px 0px rgba(0, 0, 0, 0.25);
+}
+
+.formular_newpost {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  height: 50px;
+  border: solid 1px black;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.formular_text {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  height: 200px;
+  border: solid 1px black;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.formular_submit {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  height: 40px;
+  border: solid 1px black;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+/*Formular Post erstellen END*/
 
 /* detailseite START */
 div.detailseite {
