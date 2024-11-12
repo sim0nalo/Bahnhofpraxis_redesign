@@ -1,6 +1,6 @@
 <div class="new_post-site">
   <div class="Form_box">
-    <form action="/create_post" method="post">
+    <form action="/create_post" enctype="multipart/form-data" method="post">
       <h2>Neuer Post</h2>
       <h3>Datum</h3>
       <input class="formular_newpost" type="int" name="created_at" />
@@ -8,6 +8,10 @@
       <input class="formular_newpost" type="text" name="title" />
       <h3>Text</h3>
       <input class="formular_text" type="text" name="text" />
+      <input type="file" name="img1" />
+      <input type="file" name="img2" />
+      <input type="file" name="img3" />
+      <input type="file" name="img4" />
       <input class="formular_submit" type="submit" />
     </form>
   </div>

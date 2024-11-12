@@ -1,4 +1,4 @@
-import { createApp } from "./config.js";
+import { createApp, upload } from "./config.js";
 
 const app = createApp({
   user: "old_glade_3344",
@@ -59,13 +59,26 @@ app.get("/login", async function (req, res) {
 
 /*Formular_Start*/
 
-app.post("create_post", async function (req, res) {
-  await app.locals.pool.query(
-    "INSERT INTO posts (created_at, title, text, user_id) VALUES ($1, $2, $3, $4)",
-    [req.body.created_at, req.body.title, req.body.text, req.session.userid]
-  );
-  res.redirect("/");
-});
+app.post(
+  "create_post",
+  upload.single("img1"),
+  upload.single("img2"),
+  upload.single("img3"),
+  upload.single("img4"),
+  async function (req, res) {
+    await app.locals.pool.query(
+      "INSERT INTO posts (created_at, title, text, user_id) VALUES ($1, $2, $3, $4)",
+      [
+        req.body.created_at,
+        req.body.title,
+        req.body.text,
+        req.session.userid,
+        req.file.filename,
+      ]
+    );
+    res.redirect("/");
+  }
+);
 
 /*Formular_Ende*/
 
