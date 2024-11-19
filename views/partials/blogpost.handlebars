@@ -1,23 +1,21 @@
 <div class="cards">
   {{#posts}}
     <div class="card">
-      <div class="card-img"><img
-          src="/uploads/dion-tavenier-h-Qb-9H6Big-unsplash.jpg"
-          alt="#"
-        /></div>
+      <div class="card-img"><img src="/uploads/{{img1}}" alt="#" /></div>
       <div class="card-text">
         <p>{{created_at}}</p>
         <h2>{{title}}</h2>
-        <p>{{text}}</p>
+        <p>{{text1}}</p>
         <button><a href="/detail/{{id}}">learn more</a></button>
         <div class="card-icons">
-
-          <a href="like"><img
-              class="icon"
-              src="/uploads/like.png"
-              S
-              alt=""
-            /></a>
+          <form
+            action="/like/{{id}}"
+            enctype="multipart/form-data"
+            method="POST"
+          >
+            <input class="icon" type="image" src="/uploads/like.png" />
+          </form>
+          <p>{{likes.count}} Likes</p>
           <a href="kommentar"><img
               class="icon"
               src="/uploads/chat.png"

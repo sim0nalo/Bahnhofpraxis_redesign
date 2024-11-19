@@ -12,9 +12,10 @@ const app = createApp({
 app.get("/", async function (req, res) {
   const posts = await app.locals.pool.query("select * from posts");
   for (const post of posts.rows) {
-    post.text = post.text.substring(0, 100) + "...";
+    post.text1 = post.text1.substring(0, 100) + "...";
   }
   res.render("start", { posts: posts.rows });
+  res;
 });
 
 app.get("/impressum", async function (req, res) {
@@ -38,7 +39,11 @@ app.get("/detail/:id", async function (req, res) {
   const posts = await app.locals.pool.query(
     `select * from posts WHERE id = ${req.params.id}`
   );
-  res.render("detail", { posts: posts.rows });
+  const liked = await app.locals.pool.query(
+    "SELECT COUNT(user_id) FROM liked WHERE post_id = $1",
+    [req.params.id]
+  );
+  res.render("detail", { posts: posts.rows, likes: liked.rows[0] });
 });
 
 app.get("/logout", async function (req, res) {
@@ -59,30 +64,38 @@ app.get("/login", async function (req, res) {
 
 /*Formular_Start*/
 
-app.post(
-  "create_post",
-  upload.single("img1"),
-  upload.single("img2"),
-  upload.single("img3"),
-  upload.single("img4"),
-  async function (req, res) {
-    await app.locals.pool.query(
-      "INSERT INTO posts (created_at, title, text, user_id) VALUES ($1, $2, $3, $4)",
-      [
-        req.body.created_at,
-        req.body.title,
-        req.body.text,
-        req.session.userid,
-        req.file.filename,
-      ]
-    );
-    res.redirect("/");
-  }
-);
+app.post("/create_post", upload.array("img", 4), async function (req, res) {
+  await app.locals.pool.query(
+    "INSERT INTO posts (created_at, title, text, user_id, img1, img2, img3, img4) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)",
+    [
+      req.body.created_at,
+      req.body.title,
+      req.body.text,
+      req.session.user_id,
+      req.files[0].filename,
+      req.files[1].filename,
+      req.files[2].filename,
+      req.files[3].filename,
+    ]
+  );
+  res.redirect("/");
+});
 
 /*Formular_Ende*/
 
 /* Wichtig! Diese Zeilen müssen immer am Schluss der Website stehen! */
 app.listen(3010, () => {
   console.log(`Example app listening at http://localhost:3010`);
+});
+
+app.post("/like/:id", async function (req, res) {
+  if (!req.session.userid) {
+    res.redirect("/login");
+    return;
+  }
+  await app.locals.pool.query(
+    "INSERT INTO liked (post_id, user_id) VALUES ($1, $2)",
+    [req.params.id, req.session.userid]
+  );
+  res.redirect("/");
 });
