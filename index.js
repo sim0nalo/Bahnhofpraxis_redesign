@@ -12,7 +12,7 @@ const app = createApp({
 app.get("/", async function (req, res) {
   const posts = await app.locals.pool.query("select * from posts");
   for (const post of posts.rows) {
-    post.text1 = post.text1.substring(0, 100) + "...";
+    /* post.text1 = post.text1.substring(0, 100) + "..."; */
   }
   res.render("start", { posts: posts.rows });
   res;
