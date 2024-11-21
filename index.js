@@ -12,7 +12,7 @@ const app = createApp({
 app.get("/", async function (req, res) {
   const posts = await app.locals.pool.query("select * from posts");
   for (const post of posts.rows) {
-    /* post.text1 = post.text1.substring(0, 100) + "..."; */
+    post.text1 = post.text1.substring(0, 100) + "...";
   }
   res.render("start", { posts: posts.rows });
   res;
@@ -66,11 +66,12 @@ app.get("/login", async function (req, res) {
 
 app.post("/create_post", upload.array("img", 4), async function (req, res) {
   await app.locals.pool.query(
-    "INSERT INTO posts (created_at, title, text, user_id, img1, img2, img3, img4) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)",
+    "INSERT INTO posts (created_at, title, text1, text2, user_id, img1, img2, img3, img4) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)",
     [
       req.body.created_at,
       req.body.title,
-      req.body.text,
+      req.body.text1,
+      req.body.text2,
       req.session.user_id,
       req.files[0].filename,
       req.files[1].filename,
