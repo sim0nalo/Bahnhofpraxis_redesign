@@ -84,11 +84,6 @@ app.post("/create_post", upload.array("img", 4), async function (req, res) {
 
 /*Formular_Ende*/
 
-/* Wichtig! Diese Zeilen müssen immer am Schluss der Website stehen! */
-app.listen(3010, () => {
-  console.log(`Example app listening at http://localhost:3010`);
-});
-
 app.post("/like/:id", async function (req, res) {
   if (!req.session.userid) {
     res.redirect("/login");
@@ -99,4 +94,9 @@ app.post("/like/:id", async function (req, res) {
     [req.params.id, req.session.userid]
   );
   res.redirect("/");
+});
+
+/* Wichtig! Diese Zeilen müssen immer am Schluss der Website stehen! */
+app.listen(3010, () => {
+  console.log(`Example app listening at http://localhost:3010`);
 });

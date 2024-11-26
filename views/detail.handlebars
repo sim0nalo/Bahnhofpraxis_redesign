@@ -12,13 +12,11 @@
               enctype="multipart/form-data"
               method="POST"
             >
-              <input class="icon" type="image" src="/uploads/like.png" />
+              <div class="detail-likes">
+                <input class="icon" type="image" src="/uploads/like.png" />
+                <p>{{likes.count}} Likes</p>
+              </div>
             </form>
-            <a href="kommentar"><img
-                class="icon"
-                src="/uploads/chat.png"
-                alt=""
-              /></a>
           </div>
           <p class="detailtext1">{{text1}}</p>
         </div>
@@ -40,5 +38,3 @@
     <button><a href="/">Home</a></button>
   </div>
 {{/posts}}
-
-<p>{{likes.count}} Likes</p>

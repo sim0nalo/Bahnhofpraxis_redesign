@@ -186,6 +186,10 @@ h1 {
   color: white;
 }
 
+.login_content {
+  margin-bottom: 300px;
+}
+
 .formular_login::placeholder {
   color: white;
 }
@@ -316,6 +320,15 @@ div.detailseite-lead,
 }
 .detailseite-imgs-klein img {
   width: 47%;
+}
+
+.detail-likes {
+  display: flex;
+  align-items: center;
+}
+
+.detail-likes input {
+  margin-right: 10px;
 }
 
 /* detailseite END */
