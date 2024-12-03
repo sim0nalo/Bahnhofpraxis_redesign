@@ -23,7 +23,7 @@ app.get("/impressum", async function (req, res) {
   res.render("impressum", { posts: posts.rows });
 });
 
-app.get("/profil", async function (req, res) {
+/* app.get("/profil", async function (req, res) {
   const posts = await app.locals.pool.query(
     "SELECT * FROM posts WHERE user_id = $1",
     [req.session.userid]
@@ -33,6 +33,22 @@ app.get("/profil", async function (req, res) {
     return;
   }
   res.render("profil", {});
+}); */
+
+app.get("/profil", async function (req, res) {
+  if (!req.session.userid) {
+    res.redirect("/login");
+    return;
+  }
+
+  // Fetch user information
+  const userResult = await app.locals.pool.query(
+    "SELECT name FROM users WHERE id = $1",
+    [req.session.userid]
+  );
+  const user = userResult.rows[0];
+
+  res.render("profil", { user });
 });
 
 app.get("/detail/:id", async function (req, res) {

@@ -92,6 +92,13 @@ button {
   box-shadow: 7px 4px 11px 0px rgba(0, 0, 0, 0.25);
 }
 
+button.logout {
+  margin-top: 50px;
+}
+
+.logout a {
+  font-size: 15px;
+}
 /*blogpost.handlebars START*/
 .cards {
   width: auto;
