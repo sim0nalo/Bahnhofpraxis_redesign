@@ -1,5 +1,5 @@
 * {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Outfit", sans-serif;
 }
 
 header,
@@ -19,47 +19,80 @@ a {
 
 /* roots */
 :root {
-  --black: #000;
+  --black: #1e1e1e;
   --white: #fff;
-  --blue: #0390a4;
+  --darkblue: #276bf2;
+  --lightblue: #dce8ff;
 }
 
 /* Texte */
 
 h1 {
-  font-size: 55px;
-  color: white;
+  font-size: g5px;
+  color: var(--darkblue);
   font-weight: 700;
   margin-bottom: 50px;
 }
 
 h2 {
-  font-size: 40px;
+  font-size: 50px;
   color: black;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 h3 {
-  font-size: 15px;
+  font-size: 35px;
   color: black;
-  font-weight: 700;
+  font-weight: 400;
   margin-bottom: 10px;
 }
 
 a,
-p {
+p,
+button {
   font-size: 20px;
   color: black;
   font-weight: 400;
 }
 
-a#logo {
-  font-size: 30px;
-  font-weight: 700;
+a .aktiv {
+  color: var(--darkblue);
 }
+
+/***** button *****/
+
+button {
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: var(--darkblue);
+}
+
+button.termin {
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin-left: 30px;
+}
+
+button#logo {
+  width: 75px;
+  height: 75px;
+  font-size: 50px;
+  font-weight: 400;
+  border-radius: 100px;
+}
+
+/***** navigation *****/
 
 .nav a {
   padding-left: 30px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
 }
 
 .body {
@@ -67,324 +100,12 @@ a#logo {
   display: flex;
   flex-direction: column;
 }
-/* button */
 
-button {
-  display: flex;
-  padding: 11px 23px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 33px;
-  border: 1px solid black;
-  background-color: white;
-  align-self: flex-start;
-}
-
-.new_post_button {
-  position: fixed;
-  bottom: 70px;
-  right: 70px;
-  border: none;
-  width: 70px;
-  height: 70px;
-  padding: 0px;
-  border-radius: 100%;
-  box-shadow: 7px 4px 11px 0px rgba(0, 0, 0, 0.25);
-}
-
-button.logout {
-  margin-top: 50px;
-}
-
-.logout a {
-  font-size: 15px;
-}
-/*blogpost.handlebars START*/
-.cards {
-  width: auto;
-  height: auto;
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
+/***** card *****/
 .card {
-  background-color: white;
-  width: 500px;
-  height: auto;
   display: flex;
-  flex-direction: column;
-  border-radius: 30px;
-  margin: 50px;
-  box-shadow: 7px 4px 11px 0px rgba(0, 0, 0, 0.25);
-}
-
-.cards h2 {
-  margin: 0px 0px;
-}
-
-.card-img {
-  display: flex;
-  flex-direction: column;
-}
-
-.card-img img {
-  object-fit: cover;
-  height: 300px;
-  width: auto;
-  border-radius: 30px 30px 0px 0px;
-}
-
-.card-text {
-  display: flex;
-  flex-direction: column;
-  padding: 15px;
-}
-
-.card-icons {
-  display: flex;
-  flex-direction: row;
-}
-/*blogpost.handlebars END*/
-
-/* Hintergrundbilder */
-
-div.startseite,
-div.user-site,
-div.new_post-site,
-div.login-site {
-  object-fit: contain;
-  background-position: center;
-  justify-content: end;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
-}
-
-div.startseite,
-div.new_post-site {
-  background-image: url("/uploads/homeseite.jpg");
-}
-
-div.user-site {
-  background-image: url("/uploads/denys-nevozhai-guNIjIuUcgY-unsplash (1).jpg");
-}
-
-div.login-site {
-  background-image: url("/uploads/denys-nevozhai-guNIjIuUcgY-unsplash (1).jpg");
-}
-
-/* login START*/
-
-h1 {
-  align-items: center;
-}
-
-.formular_login {
-  display: flex;
-  padding: 11px 23px;
+  padding: 38px;
   border-radius: 33px;
-  border: 2px solid white;
-  align-self: flex-start;
-  background-color: transparent;
-  color: white;
-}
-
-.login_content {
-  margin-bottom: 300px;
-}
-
-.formular_login::placeholder {
-  color: white;
-}
-
-/* login END */
-
-/* startseite START */
-
-#down-arrow {
-  padding-top: 140px;
-  padding-bottom: 160px;
-}
-
-/* startseite END */
-
-/*Formular Post erstellen START*/
-.Form_box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-  height: 650px;
-  width: 950px;
-  border-radius: 30px;
-  box-shadow: 7px 4px 11px 0px rgba(0, 0, 0, 0.25);
-}
-
-.form-newpost {
-  display: flex;
-  justify-content: space-between;
-}
-
-.formular_newpost {
-  display: flex;
-  flex-direction: column;
-  width: 450px;
-  height: 50px;
-  border: solid 1px black;
-  border-radius: 15px;
-  margin-bottom: 20px;
-  padding: 20px;
-}
-
-.formular_text {
-  display: flex;
-  flex-direction: column;
-  width: 450px;
-  height: 200px;
-  border: solid 1px black;
-  border-radius: 15px;
-  margin-bottom: 20px;
-  padding: 20px;
-}
-
-.formular_submit {
-  display: flex;
-  flex-direction: column;
-  width: 100px;
-  height: 40px;
-  border: solid 1px black;
-  border-radius: 15px;
-  margin-bottom: 20px;
-  padding: 20px;
-}
-/*Formular Post erstellen END*/
-
-/* detailseite START */
-div.detailseite {
-  display: flex;
-  flex-direction: column;
-}
-
-div.detailseite-lead,
-.detailseite-abschnitt2 {
-  display: flex;
-  flex-direction: row;
-  padding-bottom: 100px;
-}
-
-.detailseite-lead img {
-  object-fit: cover;
-  width: 50%;
-  height: 600px;
-  border-radius: 33px;
-  box-shadow: 7px 4px 11px 0px rgba(0, 0, 0, 0.25);
-}
-
-.detailseite-lead-text {
-  padding-left: 90px;
-}
-
-.detailseite-titel {
-  display: flex;
-  align-items: center;
-}
-
-.detailseite-titel h2 {
-  padding-right: 10%;
-}
-
-.icon {
-  height: 30px;
-  width: 100%;
-  box-shadow: none;
-  border-radius: 0px;
-}
-
-.detailseite-titel a {
-  padding-right: 10px;
-}
-
-.detailseite-abschnitt2-text {
-  width: 50%;
-  padding-right: 90px;
-}
-
-.detailseite-imgs {
-  width: 50%;
-}
-
-.detailseite-imgs img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 33px;
-  box-shadow: 7px 4px 11px 0px rgba(0, 0, 0, 0.25);
-  margin-bottom: 6%;
-}
-
-.detailseite-imgs-klein {
-  display: flex;
-  justify-content: space-between;
-}
-.detailseite-imgs-klein img {
-  width: 47%;
-}
-
-.detail-likes {
-  display: flex;
-  align-items: center;
-}
-
-.detail-likes input {
-  margin-right: 10px;
-}
-
-/* detailseite END */
-
-/* profilseite */
-
-div.user-site {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-div.user-infos {
-  display: flex;
-  align-items: center;
-  background-color: #fff;
-  width: 40%;
-  border-radius: 33px;
-  padding: 50px;
-  margin-left: 120px;
-  box-shadow: 7px 4px 11px 0px rgba(0, 0, 0, 0.25);
-}
-
-div.user_numbers {
-  display: flex;
-  flex-direction: row;
-}
-
-.profile_img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 200px;
-  -moz-border-radius: 200px;
-  -webkit-border-radius: 200px;
-  margin-right: 10%;
-}
-
-div.user_text {
-  margin-top: 25px;
-  margin-bottom: 25px;
-}
-
-h3.user {
-  font-weight: 400;
-  padding-right: 20px;
+  background: #fff;
+  box-shadow: 5px 5px 13.1px 0px rgba(0, 0, 0, 0.2);
 }
