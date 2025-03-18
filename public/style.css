@@ -28,10 +28,11 @@ a {
 /* Texte */
 
 h1 {
-  font-size: g5px;
+  font-size: 65px;
   color: var(--darkblue);
   font-weight: 700;
   margin-bottom: 50px;
+  margin-left: 120px;
 }
 
 h2 {
@@ -104,8 +105,34 @@ button#logo {
 /***** card *****/
 .card {
   display: flex;
-  padding: 38px;
+  padding: 35px;
   border-radius: 33px;
   background: #fff;
   box-shadow: 5px 5px 13.1px 0px rgba(0, 0, 0, 0.2);
+  justify-content: top;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  color: var(--darkblue);
+  margin-top: 35px;
+  margin-right: 35;
+}
+
+/***** Startseite *****/
+
+div.startseite {
+  object-fit: contain;
+  background-position: center;
+  justify-content: center;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+div.startseite {
+  background-image: url("/uploads/startseite_hintergrund.jpg");
 }
