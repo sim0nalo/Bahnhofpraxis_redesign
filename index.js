@@ -35,21 +35,7 @@ app.get("/impressum", async function (req, res) {
   res.render("profil", {});
 }); */
 
-app.get("/profil", async function (req, res) {
-  if (!req.session.userid) {
-    res.redirect("/login");
-    return;
-  }
-
-  // Fetch user information
-  const userResult = await app.locals.pool.query(
-    "SELECT name FROM users WHERE id = $1",
-    [req.session.userid]
-  );
-  const user = userResult.rows[0];
-
-  res.render("profil", { user });
-});
+// Fetch user information
 
 app.get("/detail/:id", async function (req, res) {
   const posts = await app.locals.pool.query(
@@ -62,54 +48,20 @@ app.get("/detail/:id", async function (req, res) {
   res.render("detail", { posts: posts.rows, likes: liked.rows[0] });
 });
 
-app.get("/logout", async function (req, res) {
-  res.render("logout", {});
+app.get("/angebot", async function (req, res) {
+  res.render("angebot", {});
 });
 
-app.get("/new_post", async function (req, res) {
-  if (!req.session.userid) {
-    res.redirect("/login");
-    return;
-  }
-  res.render("new_post", {});
+app.get("/team", async function (req, res) {
+  res.render("team", {});
 });
 
-app.get("/login", async function (req, res) {
-  res.render("login", {});
+app.get("/kontakt", async function (req, res) {
+  res.render("kontakt", {});
 });
 
-/*Formular_Start*/
-
-app.post("/create_post", upload.array("img", 4), async function (req, res) {
-  await app.locals.pool.query(
-    "INSERT INTO posts (created_at, title, text1, text2, user_id, img1, img2, img3, img4) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)",
-    [
-      req.body.created_at,
-      req.body.title,
-      req.body.text1,
-      req.body.text2,
-      req.session.user_id,
-      req.files[0].filename,
-      req.files[1].filename,
-      req.files[2].filename,
-      req.files[3].filename,
-    ]
-  );
-  res.redirect("/");
-});
-
-/*Formular_Ende*/
-
-app.post("/like/:id", async function (req, res) {
-  if (!req.session.userid) {
-    res.redirect("/login");
-    return;
-  }
-  await app.locals.pool.query(
-    "INSERT INTO liked (post_id, user_id) VALUES ($1, $2)",
-    [req.params.id, req.session.userid]
-  );
-  res.redirect("/");
+app.get("/termin", async function (req, res) {
+  res.render("termin", {});
 });
 
 /* Wichtig! Diese Zeilen müssen immer am Schluss der Website stehen! */
