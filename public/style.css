@@ -36,22 +36,28 @@ h1 {
 }
 
 h2 {
-  font-size: 50px;
+  font-size: 40px;
   color: black;
   font-weight: 400;
+  margin-bottom: 70px;
 }
 
 h3 {
-  font-size: 35px;
+  font-size: 25px;
   color: black;
   font-weight: 400;
   margin-bottom: 10px;
 }
 
+h4 {
+  font-size: 15px;
+  color: var(--darkblue);
+  font-weight: 400;
+}
+
 a,
-p,
-button {
-  font-size: 20px;
+p {
+  font-size: 15px;
   color: black;
   font-weight: 400;
 }
@@ -62,27 +68,39 @@ a .aktiv {
 
 /***** button *****/
 
-button {
+.button {
   color: var(--white);
   display: flex;
   justify-content: center;
   align-items: center;
   border: none;
   background-color: var(--darkblue);
-}
-
-button.termin {
   padding: 10px 20px;
   border-radius: 20px;
   margin-left: 30px;
 }
 
-button#logo {
+#logo {
+  padding: 0px;
   width: 75px;
   height: 75px;
   font-size: 50px;
   font-weight: 400;
   border-radius: 100px;
+}
+
+.button2 {
+  color: var(--darkblue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid;
+  border-color: var(--darkblue);
+  background-color: var(--white);
+  padding: 10px 20px;
+  border-radius: 20px;
+  width: max-content;
+  margin-top: 30px;
 }
 
 /***** navigation *****/
@@ -97,7 +115,9 @@ button#logo {
 }
 
 .body {
-  margin: 70px 120px;
+  margin-left: 120px;
+  margin-right: 120px;
+  margin-top: 0px;
   display: flex;
   flex-direction: column;
 }
@@ -120,6 +140,19 @@ button#logo {
   margin-right: 35;
 }
 
+.icon-pfeil {
+  width: 40px;
+  height: 40px;
+  color: var(--darkblue);
+  float: right;
+}
+
+.icon-detail-angebot-nav {
+  width: 30px;
+  height: 30px;
+  color: var(--darkblue);
+}
+
 /***** Startseite *****/
 
 div.startseite {
@@ -135,4 +168,52 @@ div.startseite {
 
 div.startseite {
   background-image: url("/uploads/startseite_hintergrund.jpg");
+}
+
+/***** Angebotsseite *****/
+
+.auflistung-angebote {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 Spalten mit gleicher Breite */
+  gap: 35px; /* Abstand zwischen den Karten */
+}
+
+/***** Angebotsseite Detail *****/
+.detail-angebot-nav {
+  display: flex;
+}
+
+.detail-angebot-inhalt a.button {
+  margin-left: 0px;
+  width: max-content;
+}
+
+.detail-angebot-img {
+  border-radius: 33px;
+  height: 300px;
+  width: auto;
+}
+
+/****** Teamseite *****/
+
+.card_team img {
+  object-fit: cover;
+  width: 387px;
+  height: 276px;
+  border-radius: 33px;
+}
+
+.card_team h3 {
+  margin-top: 0px;
+}
+
+.card_team h4 {
+  margin-top: 50px;
+  margin-bottom: 0px;
+}
+
+.auflistung_team {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 Spalten mit gleicher Breite */
+  gap: 35px; /* Abstand zwischen den Karten */
 }
