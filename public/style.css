@@ -147,7 +147,7 @@ a .aktiv {
   float: right;
 }
 
-.icon-detail-angebot-nav {
+.icon-detail-nav {
   width: 30px;
   height: 30px;
   color: var(--darkblue);
@@ -179,19 +179,33 @@ div.startseite {
 }
 
 /***** Angebotsseite Detail *****/
-.detail-angebot-nav {
+.detail-nav {
   display: flex;
+}
+
+.detail-nav a {
+  color: var(--darkblue);
 }
 
 .detail-angebot-inhalt a.button {
   margin-left: 0px;
   width: max-content;
+  margin-top: 80px;
 }
 
 .detail-angebot-img {
+  object-fit: cover;
   border-radius: 33px;
-  height: 300px;
-  width: auto;
+  height: 450px;
+  width: 50%;
+}
+
+.detail-angebot-inhalt {
+  display: flex;
+}
+
+.detail-angebot-text {
+  width: 50%;
 }
 
 /****** Teamseite *****/
@@ -216,4 +230,13 @@ div.startseite {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 Spalten mit gleicher Breite */
   gap: 35px; /* Abstand zwischen den Karten */
+}
+
+/**** Team Detail ****/
+
+/*** footer ***/
+hr {
+  width: 85%;
+  opacity: 30%;
+  margin-top: 100px;
 }

@@ -60,6 +60,10 @@ app.get("/kontakt", async function (req, res) {
   res.render("kontakt", {});
 });
 
+app.get("/detail-team", async function (req, res) {
+  res.render("detail-team", {});
+});
+
 app.get("/termin", async function (req, res) {
   res.render("termin", {});
 });
