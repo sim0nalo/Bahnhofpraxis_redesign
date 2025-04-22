@@ -55,6 +55,12 @@ h4 {
   font-weight: 400;
 }
 
+h5 {
+  font-size: 15px;
+  color: black;
+  font-weight: 700;
+}
+
 a,
 p {
   font-size: 15px;
@@ -181,6 +187,7 @@ div.startseite {
 /***** Angebotsseite Detail *****/
 .detail-nav {
   display: flex;
+  align-items: center;
 }
 
 .detail-nav a {
@@ -193,7 +200,7 @@ div.startseite {
   margin-top: 80px;
 }
 
-.detail-angebot-img {
+.detail-img {
   object-fit: cover;
   border-radius: 33px;
   height: 450px;
@@ -233,6 +240,15 @@ div.startseite {
 }
 
 /**** Team Detail ****/
+
+.detail-team {
+  display: flex;
+  flex-direction: row;
+}
+
+.detail-team-text {
+  width: 50%;
+}
 
 /*** footer ***/
 hr {
