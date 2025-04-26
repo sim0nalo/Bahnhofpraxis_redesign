@@ -23,6 +23,7 @@ a {
   --white: #fff;
   --darkblue: #276bf2;
   --lightblue: #dce8ff;
+  --lightblue2: #f4f6fc;
 }
 
 /* Texte */
@@ -53,6 +54,7 @@ h4 {
   font-size: 15px;
   color: var(--darkblue);
   font-weight: 400;
+  margin-top: 0px;
 }
 
 h5 {
@@ -184,13 +186,14 @@ div.startseite {
   gap: 35px; /* Abstand zwischen den Karten */
 }
 
-/***** Angebotsseite Detail *****/
+/***** Detailseiten *****/
 .detail-nav {
   display: flex;
   align-items: center;
 }
 
-.detail-nav a {
+.detail-nav a,
+.interessiert a {
   color: var(--darkblue);
 }
 
@@ -207,12 +210,15 @@ div.startseite {
   width: 50%;
 }
 
+.detail-team-inhalt,
 .detail-angebot-inhalt {
   display: flex;
 }
 
+.detail-team-text,
 .detail-angebot-text {
-  width: 50%;
+  width: 45%;
+  margin-right: 5%;
 }
 
 /****** Teamseite *****/
@@ -237,19 +243,47 @@ div.startseite {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 Spalten mit gleicher Breite */
   gap: 35px; /* Abstand zwischen den Karten */
+  row-gap: 50px;
 }
 
-/**** Team Detail ****/
+/*** offene Stellen ***/
 
-.detail-team {
+.offene-stellen {
+  margin-top: 100px;
+}
+
+.stellen-auflistung,
+.interessiert {
   display: flex;
-  flex-direction: row;
+  background-color: var(--lightblue);
+  border-radius: 33px;
+  padding: 40px;
+  box-shadow: 5px 5px 13.1px 0px rgba(0, 0, 0, 0.2);
+  margin-top: 40px;
 }
 
-.detail-team-text {
-  width: 50%;
+.stellen-auflistung-text {
+  margin-right: 30%;
 }
 
+.stellen-auflistung h3 {
+  padding: 15px 0px 15px 0px;
+  margin: 0px;
+}
+
+.interessiert {
+  flex-direction: column;
+  background-color: var(--lightblue2);
+}
+
+.offene-stellen-detail-text-2 {
+  display: flex;
+}
+
+.offene-stellen-detail-text-2 li {
+  margin-bottom: 20px;
+  width: 80%;
+}
 /*** footer ***/
 hr {
   width: 85%;

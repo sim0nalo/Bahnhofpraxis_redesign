@@ -68,6 +68,10 @@ app.get("/termin", async function (req, res) {
   res.render("termin", {});
 });
 
+app.get("/offene-stellen", async function (req, res) {
+  res.render("offene-stellen", {});
+});
+
 app.get("/detail-angebot", async function (req, res) {
   res.render("detail-angebot", {});
 });
