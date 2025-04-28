@@ -278,6 +278,7 @@ div.startseite {
 
 .offene-stellen-detail-text-2 {
   display: flex;
+  margin-top: 40px;
 }
 
 .offene-stellen-detail-text-2 li {
