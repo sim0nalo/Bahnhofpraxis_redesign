@@ -84,6 +84,22 @@ app.get("/detail-kontakt", async function (req, res) {
   res.render("detail-kontakt", {});
 });
 
+app.get("/termin-patientendetails", async function (req, res) {
+  res.render("termin-patientendetails", {});
+});
+
+app.get("/termin-behandlung", async function (req, res) {
+  res.render("termin-behandlung", {});
+});
+
+app.get("/termin-datum", async function (req, res) {
+  res.render("termin-datum", {});
+});
+
+app.get("/termin-abschliessen", async function (req, res) {
+  res.render("termin-abschliessen", {});
+});
+
 app.get("/", async function (req, res) {
   res.render("start", {});
 });
