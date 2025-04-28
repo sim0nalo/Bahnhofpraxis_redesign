@@ -285,6 +285,19 @@ div.startseite {
   margin-bottom: 20px;
   width: 80%;
 }
+
+/*** Kontakt ***/
+
+.oeffnungszeiten {
+  margin-top: 100px;
+}
+
+.oeffnungszeiten-inhalt {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 3 Spalten mit gleicher Breite */
+  gap: 35px; /* Abstand zwischen den Karten */
+}
+
 /*** footer ***/
 hr {
   width: 85%;
