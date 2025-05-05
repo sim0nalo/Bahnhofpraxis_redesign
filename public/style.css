@@ -90,6 +90,10 @@ p {
   height: max-content;
 }
 
+#nav-button {
+  margin-left: 70px;
+}
+
 #logo {
   padding: 0px;
   width: 75px;
@@ -117,7 +121,7 @@ p {
 /***** navigation *****/
 
 .nav a {
-  padding-left: 30px;
+  margin-left: 70px;
 }
 
 .nav {
@@ -276,12 +280,21 @@ div.startseite {
 
 .offene-stellen-detail-text-2 {
   display: flex;
+  justify-content: flex-start;
   margin-top: 40px;
 }
 
 .offene-stellen-detail-text-2 li {
   margin-bottom: 20px;
-  width: 80%;
+}
+
+.offene-stellen-detail-text-2 ul {
+  padding-left: 30px;
+  width: 65%;
+}
+
+.interessiert h3 {
+  margin-top: 0;
 }
 
 /*** Kontakt ***/
@@ -315,16 +328,29 @@ div.startseite {
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 2px;
   border-style: solid;
-  border-color: var(--darkblue);
+  border-color: var(--lightblue);
   background-color: var(--white);
   padding: 10px 20px;
   border-radius: 40px;
   width: max-content;
+  z-index: 1;
 }
 
 .menu-aktiv {
   background-color: var(--lightblue);
+}
+
+.termin-menu::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background-color: #dbe2ff;
+  z-index: 0;
 }
 
 /*** Form ***/
@@ -415,19 +441,4 @@ hr {
   width: 85%;
   opacity: 30%;
   margin-top: 100px;
-}
-
-.termin-menu::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 10%;
-  right: 10%;
-  height: 4px;
-  background-color: #dbe2ff;
-  z-index: 0;
-}
-
-.termin-menu-punkt {
-  z-index: 1;
 }
