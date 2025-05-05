@@ -88,6 +88,10 @@ app.get("/termin-patientendetails", async function (req, res) {
   res.render("termin-patientendetails", {});
 });
 
+app.get("/termin-bestaetigung", async function (req, res) {
+  res.render("termin-bestaetigung", {});
+});
+
 app.get("/termin-behandlung", async function (req, res) {
   res.render("termin-behandlung", {});
 });
