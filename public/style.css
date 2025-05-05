@@ -305,8 +305,10 @@ div.startseite {
 .termin-menu {
   display: flex;
   justify-content: space-between;
-  width: 70%;
   margin-bottom: 30px;
+  position: relative;
+  max-width: 1000px;
+  padding: 0 20px;
 }
 
 .termin-menu-punkt {
@@ -413,4 +415,19 @@ hr {
   width: 85%;
   opacity: 30%;
   margin-top: 100px;
+}
+
+.termin-menu::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  right: 10%;
+  height: 4px;
+  background-color: #dbe2ff;
+  z-index: 0;
+}
+
+.termin-menu-punkt {
+  z-index: 1;
 }
