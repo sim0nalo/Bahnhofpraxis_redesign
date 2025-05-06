@@ -72,6 +72,10 @@ app.get("/offene-stellen", async function (req, res) {
   res.render("offene-stellen", {});
 });
 
+app.get("/erklaerseite", async function (req, res) {
+  res.render("erklaerseite", {});
+});
+
 app.get("/ausbildung", async function (req, res) {
   res.render("ausbildung", {});
 });

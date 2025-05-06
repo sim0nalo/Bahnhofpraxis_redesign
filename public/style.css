@@ -17,7 +17,7 @@ a {
   text-decoration: none;
 }
 
-.body a {
+.interessiert a {
   color: var(--darkblue);
 }
 
@@ -199,6 +199,10 @@ div.startseite {
   align-items: center;
 }
 
+.detail-nav a {
+  color: var(--darkblue);
+}
+
 .detail-angebot-inhalt a.button,
 .detail-team-inhalt a.button {
   margin-top: 80px;
@@ -284,11 +288,11 @@ div.startseite {
   margin-top: 40px;
 }
 
-.offene-stellen-detail-text-2 li {
+li {
   margin-bottom: 20px;
 }
 
-.offene-stellen-detail-text-2 ul {
+ul {
   padding-left: 30px;
   width: 65%;
 }
