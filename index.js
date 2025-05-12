@@ -96,8 +96,28 @@ app.get("/kontakt", async function (req, res) {
   res.render("kontakt", {});
 });
 
-app.get("/detail-team", async function (req, res) {
-  res.render("detail-team", {});
+app.get("/detail-team-carina", async function (req, res) {
+  res.render("detail-team-carina", {});
+});
+
+app.get("/detail-team-jenny", async function (req, res) {
+  res.render("detail-team-jenny", {});
+});
+
+app.get("/detail-team-leon", async function (req, res) {
+  res.render("detail-team-leon", {});
+});
+
+app.get("/detail-team-michael", async function (req, res) {
+  res.render("detail-team-michael", {});
+});
+
+app.get("/detail-team-sandra", async function (req, res) {
+  res.render("detail-team-sandra", {});
+});
+
+app.get("/detail-team-stephanie", async function (req, res) {
+  res.render("detail-team-stephanie", {});
 });
 
 app.get("/termin", async function (req, res) {
