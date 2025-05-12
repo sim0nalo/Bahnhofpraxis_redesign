@@ -52,6 +52,42 @@ app.get("/angebot", async function (req, res) {
   res.render("angebot", {});
 });
 
+app.get("/detail-sprechstunde", async function (req, res) {
+  res.render("detail-sprechstunde", {});
+});
+
+app.get("/detail-labor", async function (req, res) {
+  res.render("detail-labor", {});
+});
+
+app.get("/detail-praxisapotheke", async function (req, res) {
+  res.render("detail-praxisapotheke", {});
+});
+
+app.get("/detail-notfaelle", async function (req, res) {
+  res.render("detail-notfaelle", {});
+});
+
+app.get("/detail-hausbesuche", async function (req, res) {
+  res.render("detail-hausbesuche", {});
+});
+
+app.get("/detail-kleinchirurgie", async function (req, res) {
+  res.render("detail-kleinchirurgie", {});
+});
+
+app.get("/detail-impfen", async function (req, res) {
+  res.render("detail-impfen", {});
+});
+
+app.get("/detail-testungen", async function (req, res) {
+  res.render("detail-testungen", {});
+});
+
+app.get("/detail-roentgen", async function (req, res) {
+  res.render("detail-roentgen", {});
+});
+
 app.get("/team", async function (req, res) {
   res.render("team", {});
 });
