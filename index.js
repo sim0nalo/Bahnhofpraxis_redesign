@@ -163,6 +163,9 @@ app.get("/termin-datum", async function (req, res) {
 app.get("/termin-abschliessen", async function (req, res) {
   res.render("termin-abschliessen", {});
 });
+app.get("https://www.medix-bern.ch/", async function (req, res) {
+  res.render("https://www.medix-bern.ch/", {});
+});
 
 app.get("/", async function (req, res) {
   res.render("start", {});

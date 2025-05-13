@@ -21,6 +21,10 @@ a {
   color: var(--darkblue);
 }
 
+.active {
+  color: var(--darkblue);
+}
+
 /* roots */
 :root {
   --black: #1e1e1e;
